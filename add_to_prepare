@@ -1,0 +1,19 @@
+xinetd
+usermod -aG dialout ${XPRA_USER}
+rm -f /tmp/.X7007-lock
+rm -f /home/${XPRA_USER}/.xpra/:7007.log
+
+
+if ! grep -q "source /opt/Xilinx/SDK/2016.1/settings64.sh" /home/${XPRA_USER}/.bashrc ; then 
+  echo "source /opt/Xilinx/SDK/2016.1/settings64.sh" >> /home/${XPRA_USER}/.bashrc 
+fi
+
+if ! grep -q "source /opt/pkg/petalinux-v2016.1-final/settings.sh" /home/${XPRA_USER}/.bashrc ; then 
+  echo "source /opt/pkg/petalinux-v2016.1-final/settings.sh" >> /home/${XPRA_USER}/.bashrc 
+fi
+
+if ! grep -q "petalinux-util --webtalk off" /home/${XPRA_USER}/.bashrc ; then 
+  echo "petalinux-util --webtalk off" >> /home/${XPRA_USER}/.bashrc 
+fi
+
+
