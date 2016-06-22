@@ -43,7 +43,7 @@ clean:
 	if sudo docker volume ls | grep local/c7-sdk-base ; then sudo docker rmi local/c7-sdk-base ; fi
 	# this removes all dangling images and volumes:
 	#sudo docker volume rm $(docker volume ls -qf dangling=true) ; true
-	#sudo docker rmi $(docker images -q -f dangling=true)a ; true
+	#sudo docker rmi $(docker images -q -f dangling=true) ; true
 	sudo docker info
 
 	
