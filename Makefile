@@ -40,7 +40,7 @@ clean:
 	if sudo docker ps -a | grep c7-sdk-prep ; then sudo docker rm -v c7-sdk-prep ; fi
 	# remove c7-sdk-base
 	#
-	if sudo docker volume ls | grep local/c7-sdk-base ; then sudo docker rmi local/c7-sdk-base ; fi
+	if sudo docker images | grep local/c7-sdk-base ; then sudo docker rmi local/c7-sdk-base ; fi
 	# this removes all dangling images and volumes:
 	#sudo docker volume rm $(docker volume ls -qf dangling=true) ; true
 	#sudo docker rmi $(docker images -q -f dangling=true) ; true
