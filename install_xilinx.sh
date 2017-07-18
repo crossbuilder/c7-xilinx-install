@@ -1,7 +1,7 @@
 #!/bin/bash
 export TERM=xterm
 cd /root/
-# start xinetd so petalinix won't complain about missing tftp
+# start xinetd so petalinux won't complain about missing tftp
 xinetd
 # add stuff to prepare.sh
 cat add_to_prepare >> /root/prepare.sh
@@ -18,4 +18,6 @@ expect accept.exp
 # install cable-driver
 cd /opt/Xilinx/Vivado/2016.1/data/xicom/cable_drivers/lin64/install_script/install_drivers/
 ./install_drivers
+
+rdfind -makehardlinks true /opt/Xilinx /opt/pkg
 
